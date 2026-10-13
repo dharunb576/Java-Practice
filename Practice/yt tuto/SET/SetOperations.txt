@@ -1,0 +1,177 @@
+```java
+// File: SetOperations.java
+
+import java.util.*;
+
+public class SetOperations {
+
+    public static void main(String[] args) {
+
+        // Creating two Sets
+        Set<Integer> setA = new HashSet<>();
+        Set<Integer> setB = new HashSet<>();
+
+        // Adding values
+        setA.add(1);
+        setA.add(2);
+        setA.add(3);
+        setA.add(4);
+        setA.add(4);       // Duplicate - ignored
+
+        setB.add(3);
+        setB.add(4);
+        setB.add(5);
+        setB.add(6);
+
+
+        // =========================
+        // BASIC SET OPERATIONS
+        // =========================
+
+        System.out.println("setA.add(10)              -> " + setA.add(10));
+
+        System.out.println("setA.remove(10)           -> " + setA.remove(10));
+
+        System.out.println("setA.contains(2)          -> " + setA.contains(2));
+
+        System.out.println("setA.size()                -> " + setA.size());
+
+        System.out.println("setA.isEmpty()             -> " + setA.isEmpty());
+
+
+        // =========================
+        // SET CONTENT
+        // =========================
+
+        System.out.println("setA                      -> " + setA);
+        System.out.println("setB                      -> " + setB);
+
+
+        // =========================
+        // UNION
+        // =========================
+
+        Set<Integer> union = new HashSet<>(setA);
+        union.addAll(setB);
+
+        System.out.println("setA.addAll(setB)          -> " + union);
+
+
+        // =========================
+        // INTERSECTION
+        // =========================
+
+        Set<Integer> intersection = new HashSet<>(setA);
+        intersection.retainAll(setB);
+
+        System.out.println("setA.retainAll(setB)       -> " + intersection);
+
+
+        // =========================
+        // DIFFERENCE
+        // =========================
+
+        Set<Integer> difference = new HashSet<>(setA);
+        difference.removeAll(setB);
+
+        System.out.println("setA.removeAll(setB)       -> " + difference);
+
+
+        // =========================
+        // OPPOSITE DIFFERENCE
+        // =========================
+
+        Set<Integer> reverseDifference = new HashSet<>(setB);
+        reverseDifference.removeAll(setA);
+
+        System.out.println("setB.removeAll(setA)       -> " + reverseDifference);
+
+
+        // =========================
+        // SET EQUALITY
+        // =========================
+
+        Set<Integer> setC = new HashSet<>();
+
+        setC.add(4);
+        setC.add(3);
+        setC.add(2);
+        setC.add(1);
+        setC.add(10);
+
+        System.out.println("setA.equals(setC)          -> " + setA.equals(setC));
+
+
+        // =========================
+        // ITERATING THROUGH SET
+        // =========================
+
+        System.out.print("for-each over setA         -> ");
+
+        for (int value : setA) {
+            System.out.print(value + " ");
+        }
+
+        System.out.println();
+
+
+        // =========================
+        // CLEAR
+        // =========================
+
+        Set<Integer> temp = new HashSet<>(setA);
+
+        temp.clear();
+
+        System.out.println("temp.clear()               -> " + temp);
+        System.out.println("temp.isEmpty()             -> " + temp.isEmpty());
+    }
+}
+```
+
+### Expected output
+
+Because `HashSet` does **not guarantee ordering**, the order of numbers may differ.
+
+```text
+setA.add(10)              -> true
+setA.remove(10)           -> true
+setA.contains(2)          -> true
+setA.size()               -> 4
+setA.isEmpty()            -> false
+
+setA                      -> [1, 2, 3, 4]
+setB                      -> [3, 4, 5, 6]
+
+setA.addAll(setB)         -> [1, 2, 3, 4, 5, 6]
+setA.retainAll(setB)      -> [3, 4]
+setA.removeAll(setB)      -> [1, 2]
+
+setB.removeAll(setA)      -> [5, 6]
+
+setA.equals(setC)         -> false
+
+for-each over setA        -> 1 2 3 4
+
+temp.clear()              -> []
+temp.isEmpty()            -> true
+```
+
+### The important part to memorize
+
+```text
+add(x)              → Add element
+remove(x)           → Remove element
+contains(x)         → Check element
+size()              → Number of elements
+isEmpty()           → Check empty
+
+addAll(B)           → UNION
+retainAll(B)        → INTERSECTION
+removeAll(B)        → DIFFERENCE
+
+equals(B)           → Compare Sets
+clear()             → Remove everything
+```
+
+**One important detail:** I used `new HashSet<>(setA)` before `addAll`, `retainAll`, and `removeAll`. That's because these operations **modify the Set on which they're called**. This lets you perform all operations without destroying the original `setA` and `setB`.
