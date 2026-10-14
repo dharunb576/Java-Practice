@@ -384,6 +384,145 @@ class main{
         }
     }
 
+    static void countOfFactorsOfN(int a){
+        int c = 0;
+        int lar = 0;
+        for(int i = 1; i <= a ; i++){
+            if(a % i == 0){
+                System.out.println(i);
+                c++;
+            }
+        }
+        if(c > lar){
+            lar = c;
+        }
+        System.out.println("Factor Count of "+a+" is : "+ c);
+        System.out.println("Lar :"+lar);
+        System.out.println();
+    }
+
+    static boolean nIsPrimeOrNot(int n){
+        boolean state = true;
+        if(n < 2){
+            return false;
+        }
+        else{
+            for(int i = 2; i < n; i ++){
+            if(n % i == 0){
+                state = false;
+                //System.out.println("hhhhhh");
+                break;
+            }
+        }
+    }
+    return state;
+    }
+
+    static void printPrime(int a){
+
+    }
+
+    static void sumOfEvenDigi(int a){
+        int b = 0;
+        int sum = 0;
+        int temp = a;
+        while(temp != 0){
+            b = temp % 10;
+            if(b % 2 == 0){
+                sum = sum + b;
+            }
+            temp = temp / 10;
+        }
+        System.out.println("Sum of Even No. in digit "+a+" is :"+sum);
+    }
+
+
+    static void productOfDigi(int a){
+        int b = 0;
+        int prod = 1;
+        while(a != 0){
+            b = a % 10;
+            prod = prod * b;
+            a = a /10;
+        }
+        System.out.println("Product of own digit : "+prod);
+    }
+
+    static void freqOfDigi(int digi, int freq){
+        int b = 0;
+        int c = 0;
+        while(digi != 0){
+            b = digi % 10;
+            if(b == freq){
+                c++;
+            }
+            digi = digi / 10;
+        }
+        System.out.println(c);
+    }
+
+    static void countZeroInDigi(int a){
+        int b = 0;
+        int c = 0;
+
+        while(a != 0){
+            b = a % 10;
+            if(b == 0){
+                c++;
+            }
+            a = a /10;
+        }
+        System.out.println(c);
+    }
+
+    static void removeZeroFrDigi(int a){
+        int b = 0;
+        int rev = 0;
+        while(a != 0){
+            b = a % 10;
+            if(b != 0){
+                rev = rev * 10 + b;
+            }
+            a = a/10;
+        }
+        int rev1 = 0;
+        int rev2 = 0;
+        while(rev != 0){
+            rev1 = rev % 10;
+            rev2 = rev2 * 10 + rev1;
+            rev = rev / 10;
+        }
+        //System.out.println(rev);
+        System.out.println(rev2);
+    }
+
+    static boolean armstrongNo(int a){
+        int b = 0;
+        int s = 0;
+        int temp = a;
+        while(temp != 0){
+            b = temp % 10;
+            s = s + (b*b*b);
+            temp = temp / 10;
+        }
+        if(a == s){
+            return true;
+        }
+        return false;
+    }
+
+    static boolean perfectNum(int a){
+        int b = 0;
+        for(int i = 1; i < a ; i++){
+            if(a % i == 0){
+                b = b + i;
+            }
+        }
+        if(a == b){
+            return true;
+        }
+        return false;
+    }
 
     public static void main(String[] args) {
         main ob = new main();
@@ -393,10 +532,10 @@ class main{
         Scanner sc = new Scanner(System.in);
         // System.out.print("Enter a : ");
         // char s = sc.next().charAt(0);
-        //System.out.print("Enter Unit  : ");
-        //int a = sc.nextInt();
+        System.out.print("Enter Num  : ");
+        int a = sc.nextInt();
 
-        // System.out.print("Enter b : ");
+        // System.out.print("Enter Freq Num to check : ");
         // int b = sc.nextInt();
 
         // System.out.print("Enter c : ");
@@ -456,10 +595,44 @@ class main{
         //maxOfDigi(a);
 
         //countOddEven(a);
-        // for(int i = 1 ; i <= 100; i++){
+        // for(int i = 1 ; i <= 10; i++){
         //     System.out.println("Factors of "+i+" are");
-        //     factorOfNumN(i);
+        //     //factorOfNumN(i);
+        //     countOfFactorsOfN(i);
         // }
+
+        // for(int i = 1 ; i <= a; i++){
+        //        System.out.println("The Num "+ i +" : " +(nIsPrimeOrNot(i)?"Prime Num":"Not a Prime"));
+        // }
+
+        //sumOfEvenDigi(a);
+
+        //productOfDigi(a);
+
+        //freqOfDigi(a, b);
+
+        //printPrimeTillN(a);
+
+        //countZeroInDigi(a);
+
+        //removeZeroFrDigi(a);
+        // print if armstrong No.
+        // for(int i = 0; i < a ; i++){
+        //     if(armstrongNo(i)){
+        //         System.out.println(i);
+        //     }
+        // }
+
+        // System.out.println((perfectNum(a)?"Perfect Num..!!":"Not Perfect Num"));
+        // System.out.print("The Perfect Nums Are : ");
+        // for(int i = 1; i <= a; i++){
+        //     if(perfectNum(i)){
+        //         System.out.print(i+", ");
+        //     }
+        // }
+        // System.out.println();
+
+        // factorOfNumN(a);
 
         
     }
