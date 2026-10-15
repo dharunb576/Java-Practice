@@ -1,16 +1,12 @@
+import java.util.HashSet;
+import java.util.Set;
 import java.util.*;
 
 class main{
-
-
-
     void wAnRSum(int a, int b){
         a = a+b;
         System.out.println("Sum : "+a);
     }
-
-
-
 
     int wAwRSub(int a, int b){
         a = a-b;
@@ -524,6 +520,45 @@ class main{
         return false;
     }
 
+
+
+
+public static void selfDividingNumbers(int left, int right) {
+        int b = 0;
+        Set<Integer> setNum = new LinkedHashSet<>();
+        for(int i = left; i <= right; i++){
+            int temp = i;
+            while(temp != 0){
+                b = temp % 10;
+                if(b == 0){
+                    break;
+                }
+                else if(i % b != 0){
+                    break;
+            }
+            if(temp >= 1 && temp <= 9){
+                setNum.add(i);
+            }
+            temp = temp / 10;
+            
+        }
+            
+        }
+        System.out.println(setNum);
+    }
+
+    public static void checkPerfectNumber(int num) {
+        int sum = 0;
+        for(int i = 1; i < num ; i++){
+            if(num % i == 0){
+                System.out.println(i);
+            }
+            //System.out.println("S : "+sum);
+        }
+
+    }
+
+
     public static void main(String[] args) {
         main ob = new main();
         
@@ -532,10 +567,10 @@ class main{
         Scanner sc = new Scanner(System.in);
         // System.out.print("Enter a : ");
         // char s = sc.next().charAt(0);
-        System.out.print("Enter Num  : ");
+        System.out.print("Enter A : ");
         int a = sc.nextInt();
 
-        // System.out.print("Enter Freq Num to check : ");
+        // System.out.print("Enter B : ");
         // int b = sc.nextInt();
 
         // System.out.print("Enter c : ");
@@ -633,7 +668,9 @@ class main{
         // System.out.println();
 
         // factorOfNumN(a);
+        //selfDividingNumbers(a,b);
 
+        checkPerfectNumber(a);
         
     }
 }
