@@ -1,5 +1,3 @@
-import java.util.HashSet;
-import java.util.Set;
 import java.util.*;
 
 class main{
@@ -558,6 +556,46 @@ public static void selfDividingNumbers(int left, int right) {
 
     }
 
+    static void checkStrongNum(int a){
+        int n = a;
+        int b = 0;
+        int sum = 0;
+        System.out.println("hhhh");
+        while(n != 0){
+            b = n%10;
+            sum = sum + fact(b);
+            n = n / 10;
+        }
+        if(sum == a){
+            System.out.println("Strong Num");
+        }
+        else{
+            System.out.println("Not a Strong Num");
+        }
+
+    }
+    static int fact(int a){
+        int prod = 1;
+        for(int i=1; i <= a; i++){
+                prod = prod * i;
+        }
+        return prod;
+    }
+
+    static void printStrongNum(int a){
+        int n = a;
+        int b = 0;
+        int sum = 0;
+        while(n != 0){
+            b = n%10;
+            sum = sum + fact(b);
+            n = n/10;
+        }
+        if(a == sum){
+            System.out.println(a);
+        }
+    }
+
 
     public static void main(String[] args) {
         main ob = new main();
@@ -567,8 +605,8 @@ public static void selfDividingNumbers(int left, int right) {
         Scanner sc = new Scanner(System.in);
         // System.out.print("Enter a : ");
         // char s = sc.next().charAt(0);
-        System.out.print("Enter A : ");
-        int a = sc.nextInt();
+        // System.out.print("Enter A : ");
+        // int a = sc.nextInt();
 
         // System.out.print("Enter B : ");
         // int b = sc.nextInt();
@@ -670,7 +708,17 @@ public static void selfDividingNumbers(int left, int right) {
         // factorOfNumN(a);
         //selfDividingNumbers(a,b);
 
-        checkPerfectNumber(a);
+        // checkPerfectNumber(a);
+
+        //checkStrongNum(a);
+        // System.out.println("The Strong Num are : ");
+        // for(int i = 0; i < a; i++){
+        //     printStrongNum(i);
+        // }
+        //System.out.println(264);5040  40320
+        System.out.println(24+120+120+40320+1);
+
+        
         
     }
 }
