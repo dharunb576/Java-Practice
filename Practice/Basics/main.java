@@ -595,6 +595,22 @@ public static void selfDividingNumbers(int left, int right) {
             System.out.println(a);
         }
     }
+    static void checkAutomorphic(int a){
+        int b = (a*a) % 10;
+        System.out.println(b);
+        int temp = 0;
+        temp = a % 10;
+        if(temp == b){
+            System.out.println("automorphic");
+        }
+        else{
+            System.out.println("Not A Automorphic");
+        }
+    }
+
+    static void squareTab(int a){
+        System.out.println(a+" : "+a*a);
+    }
 
 
     public static void main(String[] args) {
@@ -605,8 +621,8 @@ public static void selfDividingNumbers(int left, int right) {
         Scanner sc = new Scanner(System.in);
         // System.out.print("Enter a : ");
         // char s = sc.next().charAt(0);
-        // System.out.print("Enter A : ");
-        // int a = sc.nextInt();
+        System.out.print("Enter A : ");
+        int a = sc.nextInt();
 
         // System.out.print("Enter B : ");
         // int b = sc.nextInt();
@@ -716,9 +732,14 @@ public static void selfDividingNumbers(int left, int right) {
         //     printStrongNum(i);
         // }
         //System.out.println(264);5040  40320
-        System.out.println(24+120+120+40320+1);
-
         
+        checkAutomorphic(a);
+
+        // for(int i = 1; i < a; i++){
+        //     squareTab(i);
+        // }
+
         
     }
 }
+
