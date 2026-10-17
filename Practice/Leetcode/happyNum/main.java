@@ -1,44 +1,41 @@
-import java.util.Scanner;
-
+import java.util.*;
 public class main {
+
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-    int an = sc.nextInt();
-    if(isHappy(an)){
-        System.out.println("Happy num");
-    }
-    else{
-        System.out.println("Not a Happy num");
-    }
+        int a = sc.nextInt();
+
+        if(checkHappy(a)){
+            System.out.println("Happy");
+        }
+        else{
+            System.out.println("Not happy");
+        }
     }
     
-    
-    
-static boolean isHappy(int n) {
-        if(val(n) == 1){
+    static boolean checkHappy(int n){
+        int temp = val(n);
+        if(temp == 1){
             return true;
         }
-        return false;
+        else{
+            return false;
+        }
     }
     
-    private static int val(int a){
+    static int val(int a){
         int sum = 0;
         int b = 0;
-        int a1 = a;
-        while(a1 != 0){
-            b = a1 % 10;
-            //System.out.println(b);
+        int temp = a;
+        int r = 0;
+        while(temp != 0){
+            b = temp % 10;
             sum = sum + (b*b);
-            //System.out.println(sum);
-            a1 = a1 / 10;
+            temp = temp / 10;
         }
-        if(sum != 1){
+        if(sum > 1){
             val(sum);
-        }else{
-            System.out.println(sum);
-            return sum;
         }
-        return 0;
+        return r;
     }
-    
 }
