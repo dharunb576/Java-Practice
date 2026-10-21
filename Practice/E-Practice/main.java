@@ -16,9 +16,11 @@ class main{
 
         // search();
 
-        sort();
+        // sort();
 
-        //bubbleSort();
+        // bubbleSort();
+
+        bubb();
 
     }
     void discountOffer(float a){
@@ -121,13 +123,41 @@ class main{
 
      
     static void bubbleSort(){
-        int[] arr = {20, 10, 30, 60, 40, 70};
+        int[] arr = {5, 2, 7, 1, 6, 3, 4};
+        int c =0;
+        for(int i = 0; i < arr.length; i++){
+            for(int j=i;j<arr.length;j++){
+                if(arr[i]>arr[j]){
+                    int temp=arr[i];
+                    arr[i]=arr[j];
+                    arr[j]=temp;
+                    c++;
+                }
+            }
+        }
+        for(int a : arr){
+            System.out.println(a);
+        }
+        System.out.println();
+        System.out.println(c);
+    }
 
-        for(int i = 1; i < arr.length; i++){
-            
-            // if(arr[i-1]){
+    static void bubb(){
+        int[] arr = {5, 2, 7, 1, 6, 3, 4};
 
-            // }
+        for(int i=0; i< arr.length; i++){
+            for(int j=i; j < arr.length; j++){
+
+                if(arr[i] > arr[j]){
+                    int temp = arr[i];
+                    arr[i] = arr[j];
+                    arr[j] = temp;
+                }
+            }
+        }
+
+        for(int a : arr){
+            System.out.println(a);
         }
     }
 }
