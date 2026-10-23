@@ -10,6 +10,7 @@ class single{
         }
     }
         Node head = null;
+
         void insert(int a){
             Node nn = new Node(a);
             if(head == null){
@@ -221,5 +222,6 @@ public class Main {
         ob.search(300);
         ob.display();
         //ob.length();
+        
     }
 }

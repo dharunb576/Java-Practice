@@ -518,8 +518,13 @@ class main{
         return false;
     }
 
+    static void shyam(){
+        int a = Short.MAX_VALUE;
+        System.out.println(a);
+    }
 
 
+//214,74,83,647
 
 public static void selfDividingNumbers(int left, int right) {
         int b = 0;
@@ -621,8 +626,8 @@ public static void selfDividingNumbers(int left, int right) {
         Scanner sc = new Scanner(System.in);
         // System.out.print("Enter a : ");
         // char s = sc.next().charAt(0);
-        System.out.print("Enter A : ");
-        int a = sc.nextInt();
+        // System.out.print("Enter A : ");
+        // int a = sc.nextInt();
 
         // System.out.print("Enter B : ");
         // int b = sc.nextInt();
@@ -733,11 +738,13 @@ public static void selfDividingNumbers(int left, int right) {
         // }
         //System.out.println(264);5040  40320
         
-        checkAutomorphic(a);
+        // checkAutomorphic(a);
 
         // for(int i = 1; i < a; i++){
         //     squareTab(i);
         // }
+
+        shyam();
 
         
     }

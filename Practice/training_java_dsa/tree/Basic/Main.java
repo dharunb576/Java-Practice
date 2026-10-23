@@ -200,6 +200,7 @@ class Main{
                 delete(root, a);
                 inorder(root);
                 System.out.println();
+                sc.close();
 
 
         
