@@ -37,7 +37,7 @@ class sing{
 
 
 public class pract{
-    public static void main(String[] args) {
+    public static void main() {
         sing ob = new sing();
         
         ob.display();

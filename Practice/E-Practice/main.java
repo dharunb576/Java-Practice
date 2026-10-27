@@ -20,9 +20,70 @@ class main{
 
         // bubbleSort();
 
-        bubb();
+        // bubb();
+
+        // secLarByRange();
+
+        // reverseString();
+
+        rotateArrayByOne();
 
     }
+
+    static void rotateArrayByOne(){
+        int[] arr = {1,2,3,4,5,6,7,8};
+        int temp = arr[0];
+
+        for(int i = 1; i < arr.length; i++){
+            arr[i-1] = arr[i];
+        }
+        arr[arr.length-1] = temp;
+        for(int a : arr){
+            System.out.print(a);
+        }
+        System.out.println();
+    }
+
+    static void reverseString(){
+        String a = "abcdef";
+        int left = 0;
+        int right = a.length()-1;
+        
+        char[] ch = a.toCharArray();
+        
+        while(left < right){
+            char temp = ch[left];
+            ch[left] = ch[right];
+            ch[right] = temp;
+
+            left++;
+            right--;
+        }
+        System.out.println(ch);
+    }
+
+
+
+
+    static void secLarByRange(){
+        int[] arr  = {5,2,7,12,3,8,4,15,5,2,8};
+        int lar = Integer.MIN_VALUE;
+        int secLar = -1;
+        for(int i = 0; i < arr.length; i++){
+            if(lar < arr[i]){
+                lar = arr[i];
+            }
+        }
+        for(int i = 0; i < arr.length; i++){
+             if(secLar < arr[i] && lar > arr[i]){
+                secLar = arr[i];
+            }
+        }
+        System.out.println(lar);
+        System.out.println(secLar);
+    }
+
+
     void discountOffer(float a){
 
         float tot = 0;

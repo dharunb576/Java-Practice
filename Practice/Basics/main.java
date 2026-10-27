@@ -11,6 +11,12 @@ class main{
         return a;
     }
 
+    static void vikash(){
+        int a = 10;
+        int b = 2;
+        System.out.println(a^b);
+        // System.out.println(a&b);
+    }
 
 
 
@@ -18,6 +24,11 @@ class main{
         System.out.println("THis is java code");
     }
 
+    static void tarun(){
+        int a = 999;
+        int b = (int)Math.log10(a)+1;
+        System.out.println(b);
+    }
 
 
 
@@ -744,8 +755,9 @@ public static void selfDividingNumbers(int left, int right) {
         //     squareTab(i);
         // }
 
-        shyam();
-
+        // shyam();
+        // vikash();
+        tarun();
         
     }
 }
