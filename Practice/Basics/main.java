@@ -628,6 +628,45 @@ public static void selfDividingNumbers(int left, int right) {
         System.out.println(a+" : "+a*a);
     }
 
+    static void maxSumOf2Arr(){
+        int[] arr = {3,-2,-4,8,-5,2};
+        int sum = 0;
+        int i = 0;
+        int j = arr.length-1;
+        int max = Integer.MIN_VALUE;
+        while(i < j){
+            sum = arr[i] + arr[j];
+            if(arr[i] > arr[j]){
+                j--;
+            }
+            else{
+                i++;
+            }
+            max = Math.max(max,sum);
+        }
+        System.out.println(max);
+    }
+
+    static void adamNum(){
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        int nRev = rev(n);
+        System.out.println(nRev);
+    }
+
+    static int rev(int n){
+        int a1 = 0;
+        int revv = 0;
+        while(n != 0){
+            a1 = n % 10;
+            revv = revv + (a1 * 10);
+            n = n/10;
+        }
+        return revv;
+    }
+
+
+
 
     public static void main(String[] args) {
         main ob = new main();
@@ -757,7 +796,14 @@ public static void selfDividingNumbers(int left, int right) {
 
         // shyam();
         // vikash();
-        tarun();
+        // tarun();
+
+        // maxSumOf2Arr();
+
+        adamNum();
+        // //12 - 144
+        // //21 - 441
+        // automorphic();
         
     }
 }

@@ -1,13 +1,14 @@
 
-
 // class singleLL{
     class Node{
         int data;
         Node next;
+        Node prev;
         
         Node(int d){
             data = d;
             next = null;
+            prev = null;
         }
     }
 
@@ -28,21 +29,6 @@ class linkedList{
         while(temp.next != null){
             temp = temp.next;
         }temp.next = nn;
-    }
-
-
-    void display(){
-        if(head== null){
-            System.out.println("List is Empty");
-        }
-        Node temp = head;
-        System.out.println("Size : "+size);
-        while(temp != null){
-            System.out.println(temp.data);
-            temp = temp.next;
-        }
-        System.out.println();
-        
     }
 
     void insertAtBegin(int data){
@@ -163,6 +149,47 @@ class linkedList{
         }
     }
 
+    Node reverse(){
+        Node prev = null;
+        Node temp = head;
+        Node next = null;
+
+        while(temp != null){
+            next = temp.next;
+            temp.next = prev;
+            prev = temp;
+            temp = next;
+        }
+        return prev;
+        
+    }
+
+    void display1(){
+        if(head== null){
+            System.out.println("List is Empty");
+        }
+        Node temp = head;
+        System.out.println("Size : "+size);
+        while(temp != null){
+            System.out.print(temp.data + " ");
+            temp = temp.next;
+        }
+        System.out.println();
+        
+    }
+
+    void display2(){
+        Node reve = reverse();
+        if(reve== null){
+            System.out.println("List is Empty");
+        }
+        while(reve != null){
+            System.out.print(reve.data+" ");
+            reve = reve.next;
+        }
+        System.out.println();
+    }
+
 }
 
     
@@ -170,42 +197,42 @@ public class single{
     public static void main(String parthi[]) {
         linkedList obj = new linkedList();
 
-        obj.insertAtBegin(0);
-        obj.insertAtBegin(2);
+        // obj.insertAtBegin(0);
+        // obj.insertAtBegin(2);
         obj.insertAtEnd(1);
         obj.insertAtEnd(2);
-        obj.insertAtEnd(3);
-        obj.insertAtEnd(4);
-        obj.insertAtEnd(5);
+        // obj.insertAtEnd(3);
+        // obj.insertAtEnd(4);
+        // obj.insertAtEnd(5);
 
 
         // obj.insertPos(100, 3);
         // obj.insertPos(200, 5);
 
-        obj.display();
+        obj.display1();
 
         // obj.deleteAtEnd();
         // obj.deleteAtEnd();
-        // obj.display();
+        // obj.display1();
 
         // obj.deleteBeg();
         // obj.deleteBeg();
-        // obj.display();
+        // obj.display1();
 
         // obj.deletePos(4);
         // obj.deletePos(1);
-        // obj.display();
+        // obj.display1();
 
         // obj.deleteByValM1(5);
-        // obj.display();
+        // obj.display1();
 
-        obj.deleteByValM2(3);
-        obj.display();
+        // obj.deleteByValM2(3);
+        // obj.display1();
 
-        obj.deleteByValM3(0);
-        obj.display();
+        // obj.deleteByValM3(0);
+        // obj.display1();
 
-
+        obj.display2();
 
     }
 }
