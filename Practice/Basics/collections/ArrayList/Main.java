@@ -21,6 +21,7 @@ public class Main {
         l1.add(2);
         l1.add(50);
         l1.add(30);
+        l1.add(50);
         System.out.println(l1);
 
         //----to retrieve the elements by the index----
@@ -35,10 +36,13 @@ public class Main {
 
         System.out.println(l1.contains(100));
 
-        //--- to remove value index---
+        //--- to remove value by index---
         System.out.println("-------");
         l1.remove(1);
         System.out.println(l1);
+
+        // -- remove by pointing the value ---
+        l1.remove(Integer.valueOf(10));
 
         //-- to return the size of the list---
         System.out.println("-------");
@@ -48,10 +52,13 @@ public class Main {
         System.out.println("-------");
         System.out.println(l1.contains(100));
 
-        // --- to find element index ---
+        // --- to find index of the element ---
         System.out.println("-------");
         System.out.println(l1.indexOf(5));
         System.out.println(l1);
+
+        // -- if the element is more than 1 time, to find the last occurance
+        System.out.println(l1.lastIndexOf(50));
 
 
         //-- to clear out all elements in the list

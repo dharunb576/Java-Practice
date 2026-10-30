@@ -647,19 +647,24 @@ public static void selfDividingNumbers(int left, int right) {
         System.out.println(max);
     }
 
-    static void adamNum(){
-        Scanner sc = new Scanner(System.in);
-        int n = sc.nextInt();
-        int nRev = rev(n);
-        System.out.println(nRev);
+    static boolean adamNum(int n){ 
+        int nRev = revvv(n);
+        if(revvv(n*n) == (nRev*nRev)){
+            System.out.println(n+" ");
+            System.out.println(revvv(n*n));
+            System.out.println(nRev);
+            System.out.println("-----");
+            return true;
+        }
+        return false;
     }
 
-    static int rev(int n){
+    static int revvv(int n){
         int a1 = 0;
         int revv = 0;
         while(n != 0){
             a1 = n % 10;
-            revv = revv + (a1 * 10);
+            revv = (revv*10) + a1;
             n = n/10;
         }
         return revv;
@@ -800,7 +805,9 @@ public static void selfDividingNumbers(int left, int right) {
 
         // maxSumOf2Arr();
 
-        adamNum();
+        for(int i = 0; i < 50; i++){
+            adamNum(i);
+        }
         // //12 - 144
         // //21 - 441
         // automorphic();

@@ -5,7 +5,6 @@ public class Main {
         Stack <Integer> stc = new Stack<>();
 
         // -- to check the stack is empty---
-        System.out.println(stc.empty());
         
         // --- to add the elements in the stack---
         for(int i = 5; i < 30 ; i+=5){
@@ -43,11 +42,12 @@ public class Main {
         System.out.println("peek -- > "+stc.search(67));
         System.out.println(stc.search(10));
         System.out.println(stc.search(15));
-
+        
         System.out.println(stc.peek());
         System.out.println(stc);
-
+        
         // -- to check the the Stack Contains the value --
         System.out.println(stc.contains(10));
+        System.out.println(stc.empty());
     }   
 }
